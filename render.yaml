@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: n8n-custom
+    env: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: strongpassword
+      - key: N8N_HOST
+        value: n8n-custom.onrender.com
+      - key: N8N_PORT
+        value: 5678
+      - key: WEBHOOK_URL
+        value: https://n8n-custom.onrender.com
+      - key: GENERIC_TIMEZONE
+        value: Europe/Kyiv
+      - key: EXECUTIONS_PROCESS
+        value: main
+      - key: NODE_FUNCTION_ALLOW_BUILTIN
+        value: fs,crypto
