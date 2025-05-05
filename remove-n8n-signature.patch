@@ -1,0 +1,16 @@
+diff --git a/packages/nodes-base/nodes/Telegram/Telegram.node.ts b/packages/nodes-base/nodes/Telegram/Telegram.node.ts
+index abcdef1..1234567 100644
+--- a/packages/nodes-base/nodes/Telegram/Telegram.node.ts
++++ b/packages/nodes-base/nodes/Telegram/Telegram.node.ts
+@@ -900,7 +900,9 @@ export class Telegram implements INodeType {
+ 			}
+
+ 			const text = this.getNodeParameter('text', i) as string;
+
+-			text += `\n\nThis message was sent automatically with [n8n](https://n8n.io)`;
++			// Видалено автоматичне додавання підпису n8n
++			// text += `\n\nThis message was sent automatically with [n8n](https://n8n.io)`;
++
+ 			body = {
+ 				chat_id,
+ 				text,
